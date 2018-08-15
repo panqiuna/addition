@@ -1,0 +1,36 @@
+template
+  div id=container
+    p v-for=(item, key) in items style=display inline-block
+      {{item}}
+    p
+    i-button type=primary @click=modal1 = trueÌí¼Ói-button
+    modal
+      v-model=modal1
+      title=Ñ¡Ôñ
+      @on-ok=ok
+      @on-cancel=cancel
+      input type=text v-model=inp placeholder=jdgs 
+    modal
+
+  div
+template
+script
+  export default {
+    data() {
+      return {
+        inp '',
+        modal1false,
+        items [],
+      }
+    },
+    methods {
+      ok () {
+        this.items.push(this.inp);
+        this.inp=''
+      },
+      cancel () {
+
+      }
+    }
+  }
+script
